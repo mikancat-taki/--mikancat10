@@ -24,7 +24,7 @@ export default function SDGsQuiz({ language }: SDGsQuizProps) {
   const [showResult, setShowResult] = useState(false);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
   const [isQuizStarted, setIsQuizStarted] = useState(false);
-  const [questions] = useState<SDGQuestion[]>(shuffleArray([...sdgsQuizData]));
+  const [questions] = useState<SDGQuestion[]>(shuffleQuestions(shuffleArray([...sdgsQuizData])));
 
   const saveScoreMutation = useMutation({
     mutationFn: async (scoreData: { username: string; quizType: string; level: string; score: number; totalQuestions: number }) => {
@@ -44,6 +44,28 @@ export default function SDGsQuiz({ language }: SDGsQuizProps) {
     }
     return shuffled;
   }
+
+  const shuffleQuestions = (questions: SDGQuestion[]) => {
+    return questions.map(q => {
+      const options = [...q.options];
+      const correctText = options[q.correctAnswer];
+      
+      // Shuffle options
+      for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+      }
+      
+      // Find new correct answer index
+      const newCorrectAnswer = options.findIndex(opt => opt === correctText);
+      
+      return {
+        ...q,
+        options,
+        correctAnswer: newCorrectAnswer
+      };
+    });
+  };
 
   const handleStartQuiz = () => {
     setIsQuizStarted(true);

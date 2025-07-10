@@ -4,6 +4,14 @@
 
 This is a full-stack educational application called "Study Cat" (勉強ねこ) built with React, TypeScript, Express, and PostgreSQL. It provides various learning modules including translation tools, quizzes, memo-taking, drawing, and real-time chat functionality. The application supports multiple languages (Japanese, Chinese, English) and is designed for educational purposes.
 
+## Recent Changes (July 2025)
+
+✓ Updated footer copyright year from 2024 to 2025
+✓ Added GitHub repository link to footer (https://github.com/mikancat-taki/--mikancat10)
+✓ Implemented answer randomization for all quiz systems (Math, English, SDGs)
+✓ Fixed clock functionality with real-time display and world time zones
+✓ Added shuffle functionality to randomize quiz answer options for better learning experience
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

@@ -16,10 +16,10 @@ export function Footer({ language }: FooterProps) {
             <div className="w-8 h-8 bg-cat-pink rounded-full flex items-center justify-center">
               🐱
             </div>
-            <span className="text-gray-600 text-sm">© 2024 {t('app.title')}</span>
+            <span className="text-gray-600 text-sm">© 2025 {t('app.title')}</span>
           </div>
           
-          <div className="flex items-center space-x-4 text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 text-sm text-gray-500">
             <span className="flex items-center">
               <Github className="h-4 w-4 mr-2" />
               Deploy Ready: Glitch・Render
@@ -28,6 +28,15 @@ export function Footer({ language }: FooterProps) {
               <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Multi-Language</span>
               <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Responsive</span>
             </div>
+            <a 
+              href="https://github.com/mikancat-taki/--mikancat10" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-600 hover:text-gray-800 transition-colors"
+            >
+              <Github className="h-4 w-4 mr-1" />
+              GitHub Repository
+            </a>
           </div>
         </div>
       </div>

@@ -38,9 +38,31 @@ export default function EnglishQuiz({ language }: EnglishQuizProps) {
     },
   });
 
+  const shuffleQuestions = (questions: QuizQuestion[]) => {
+    return questions.map(q => {
+      const options = [...q.options];
+      const correctText = options[q.correctAnswer];
+      
+      // Shuffle options
+      for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+      }
+      
+      // Find new correct answer index
+      const newCorrectAnswer = options.findIndex(opt => opt === correctText);
+      
+      return {
+        ...q,
+        options,
+        correctAnswer: newCorrectAnswer
+      };
+    });
+  };
+
   const handleLevelSelect = (level: Level) => {
     setSelectedLevel(level);
-    setQuestions(englishQuizData[level]);
+    setQuestions(shuffleQuestions(englishQuizData[level]));
     setCurrentQuestionIndex(0);
     setScore(0);
     setSelectedAnswer(null);
