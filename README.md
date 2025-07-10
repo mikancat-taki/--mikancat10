@@ -10,3 +10,11 @@ ___________________
 render
 glitch
 ___________________
+スタートコマンド
+```
+npm install; npm run build
+```
+ビルドコマンド
+```
+npm run start
+```
