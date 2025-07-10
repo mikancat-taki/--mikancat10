@@ -76,7 +76,8 @@ export class MemStorage implements IStorage {
     const memo: Memo = { 
       ...insertMemo, 
       id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      userId: insertMemo.userId || null
     };
     this.memos.set(id, memo);
     return memo;

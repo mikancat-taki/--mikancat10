@@ -10,6 +10,7 @@ import { Language } from "@/lib/i18n";
 import Home from "@/pages/home";
 import Translator from "@/pages/translator";
 import Calculator from "@/pages/calculator";
+import Clock from "@/pages/clock";
 import Memo from "@/pages/memo";
 import Drawing from "@/pages/drawing";
 import Chat from "@/pages/chat";
@@ -29,6 +30,7 @@ function Router() {
         <Route path="/" component={() => <Home language={language} />} />
         <Route path="/translator" component={() => <Translator language={language} />} />
         <Route path="/calculator" component={() => <Calculator language={language} />} />
+        <Route path="/clock" component={() => <Clock language={language} />} />
         <Route path="/memo" component={() => <Memo language={language} />} />
         <Route path="/drawing" component={() => <Drawing language={language} />} />
         <Route path="/chat" component={() => <Chat language={language} />} />
